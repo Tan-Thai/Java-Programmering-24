@@ -7,25 +7,24 @@ public class TestScanner {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Please input a number");
-        
-        while (!input.hasNextInt() || input.nextInt() <= 18) {
-            System.out.println("input isnt valid, please try again");
-            input.next();
+        int number = 0;
+
+        while (number < 18 || number > 60) {
+            number = numberCheck(input);
+            System.out.println("the number you input is not valid");
+
         }
-
-        int myInt = input.nextInt();
-        
-        System.out.println("The current input number is " + myInt);
-
-        // if (numberCheck) {
-        //     myInt = scanner.nextInt();
-        //     System.out.println("The input number is " + myInt);
-        // }
-        // else {
-        //     System.out.println("Invalid input");
-        // }
+        System.out.println("The current input number is " + number);
         
         input.close();
+    }
+
+    private static int numberCheck(Scanner input){
+        while (!input.hasNextInt()){
+            input.nextLine();
+            System.out.println("invalid input, please write a number");
+        }
+        return input.nextInt();
     }
 
 }
