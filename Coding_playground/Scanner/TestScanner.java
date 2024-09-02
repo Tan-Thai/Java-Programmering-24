@@ -17,7 +17,7 @@ public class TestScanner {
             System.out.println("The number you gave is not valid");
             number = input.nextInt();
         }
-        while (number < 18 || number > 60);
+        while (number <= 18 || number >= 60);
         System.out.println("The current input number is " + number);
 
         // while (number < 18 || number > 60) {
