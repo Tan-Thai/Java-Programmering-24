@@ -215,11 +215,22 @@ public class E1 {
         while (tempChoiceNum < 1);
         
         sc.close();
-        
+
         int sum17 = (tempChoiceNum * (tempChoiceNum + 1)) / 2;
         System.out.println("1.17 sum of natural numbers: " + sum17);
 
 
+        //1.18
+        System.out.println("------------ Assignment 1.18 ------------");
+        String originalString = "This is quite a random string of text.";
+
+        int countedNumOfWords = originalString.split(" ").length;
+        System.out.println("Original text: " + originalString);
+        System.out.println("Counted words: " + countedNumOfWords);
+
+        // borrowed code from https://www.scaler.com/topics/reverse-a-sentence-in-java/
+        System.out.println("This is the reverse sentence: " + reverseString(originalString));
+        
     }
 
     public static void checkWeather(boolean isCold,boolean isRaining) {           
@@ -230,4 +241,14 @@ public class E1 {
             System.out.println("Nah dude, you're fine. Get out there.");
         }
     };
+
+    public static String reverseString(String texString){
+
+        int x = texString.indexOf(" ");
+        if (x == -1) {
+            return texString;
+        }
+
+        return reverseString(texString.substring(x+1)) + " " + texString.substring(0, x);
+    }
 }
