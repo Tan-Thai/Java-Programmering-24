@@ -2,6 +2,7 @@ package Coding_playground;
 
 import java.text.MessageFormat;
 import java.util.Scanner;
+import java.util.Random;
 
 public class E1 {
     public static void main(String[] args) {
@@ -233,7 +234,6 @@ public class E1 {
             tempChoiceNum = sc.nextInt();
         } while (tempChoiceNum < 1);
 
-        sc.close();
 
         int sum17 = (tempChoiceNum * (tempChoiceNum + 1)) / 2;
         System.out.println("1.17 sum of natural numbers: " + sum17);
@@ -252,6 +252,44 @@ public class E1 {
         // 1.19
         System.out.println("------------ Assignment 1.19 ------------");
 
+        int iterationCount19 = 0;
+        System.out.println("Please input a number above 0");
+
+
+        do {
+            while (!sc.hasNextInt()) {
+                System.out.println("invalid input, please write a number");
+                sc.next();
+            }
+            System.out.println("The number you gave is not valid");
+            iterationCount19 = sc.nextInt();
+        } while (iterationCount19 < 1);
+
+        sc.close();
+        
+        for (int i = 1; i <= iterationCount19; i++){
+
+            Random random = new Random();
+            int randomValue = random.nextInt(-iterationCount19, iterationCount19);
+
+            int step1 = i + 1;
+            int step2 = step1 * (-3);
+            int step3 = (step1 - step2) * 2;
+            int step4 = step3 + step2 + randomValue; 
+
+            if(step4 < 0){
+                System.out.println("The total is in the negatives, the number is: " + step4);
+            } else {
+                System.out.println("The total is in the positives, the number is: " + step4);
+
+            }
+            
+        };
+        // while (iterations < 15) {
+        // System.out.println(iterations + ": This while-loop is now executing!");
+        // iterations++;
+        // }
+
         //#endregion
     }
 
@@ -263,13 +301,13 @@ public class E1 {
         }
     };
 
-    public static String reverseString(String texString) {
+    public static String reverseString(String textString) {
 
-        int x = texString.indexOf(" ");
+        int x = textString.indexOf(" ");
         if (x == -1) {
-            return texString;
+            return textString;
         }
 
-        return reverseString(texString.substring(x + 1)) + " " + texString.substring(0, x);
+        return reverseString(textString.substring(x + 1)) + " " + textString.substring(0, x);
     }
 }
