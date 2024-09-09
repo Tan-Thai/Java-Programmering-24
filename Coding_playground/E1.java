@@ -251,40 +251,50 @@ public class E1 {
 
         // 1.19
         System.out.println("------------ Assignment 1.19 ------------");
+        Random random = new Random();
 
         int iterationCount19 = 0;
-        System.out.println("Please input a number above 0");
+        int step4 = 0;
+        
+        System.out.println("Please input a number.");
+        sc.nextLine();
 
-
-        do {
-            while (!sc.hasNextInt()) {
-                System.out.println("invalid input, please write a number");
-                sc.next();
-            }
-            System.out.println("The number you gave is not valid");
+        if (!sc.hasNextInt()) {
+            System.out.println("invalid input, please enter a number");
+            sc.next();
+        } else {
             iterationCount19 = sc.nextInt();
-        } while (iterationCount19 < 1);
+        }
+        
+        // do {
+        //     while (!sc.hasNextInt()) {
+        //         System.out.println("invalid input, please write a number");
+        //         sc.next();
+        //     }
+        //     System.out.println("The number you gave is not valid");
+        //     iterationCount19 = sc.nextInt();
+        // } while (iterationCount19 < 0);
 
         sc.close();
-        
+        System.out.println("the number you put in is: " + iterationCount19);
+
+
         for (int i = 1; i <= iterationCount19; i++){
 
-            Random random = new Random();
-            int randomValue = random.nextInt(-iterationCount19, iterationCount19);
-
+            
             int step1 = i + 1;
             int step2 = step1 * (-3);
             int step3 = (step1 - step2) * 2;
-            int step4 = step3 + step2 + randomValue; 
-
-            if(step4 < 0){
-                System.out.println("The total is in the negatives, the number is: " + step4);
-            } else {
-                System.out.println("The total is in the positives, the number is: " + step4);
-
-            }
+            int randomValue = random.nextInt(-iterationCount19, iterationCount19);
+            step4 = step3 + step2 + randomValue; 
             
         };
+
+        if(step4 < 0){
+            System.out.println("The total is in the negatives, the number is: " + step4);
+        } else {
+            System.out.println("The total is in the positives, the number is: " + step4);
+        }
         // while (iterations < 15) {
         // System.out.println(iterations + ": This while-loop is now executing!");
         // iterations++;
