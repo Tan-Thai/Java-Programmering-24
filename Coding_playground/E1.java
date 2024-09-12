@@ -280,7 +280,6 @@ public class E1 {
 
 
         for (int i = 1; i <= iterationCount19; i++){
-
             
             int step1 = i + 1;
             int step2 = step1 * (-3);
