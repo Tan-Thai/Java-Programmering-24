@@ -39,12 +39,11 @@ public class Challange_2 {
                 case '3':
                     caseThree();
                     break;
-                // case 4:
-                // System.out.println("You chose option 4");
 
-                // break;
+                case '4':
+                    caseFour();
+                    break;
             }
-            sc.nextLine();
             System.out.println("--------Returning to the main menu--------");
 
         } while (chosenOption != 'e');
@@ -80,6 +79,7 @@ public class Challange_2 {
         System.out.println("the first number is " + secondNumber);
 
         System.out.println("The total of the 2 given numbers is " + (firstNumber + secondNumber));
+        sc.nextLine();
     }
 
     public void caseTwo() {
@@ -97,18 +97,47 @@ public class Challange_2 {
             char comparison = inString.charAt(i);
             if (comparison == c) {
                 numOfOccurences++;
-                ;
             }
         }
         System.out.println("There's " + numOfOccurences + " " + c + " in the word " + inString);
     }
 
-    public void caseThree(){
-        
+    public void caseThree() {
+        // https://stackoverflow.com/questions/58942938/reversing-a-string-from-users-input
+        // good explaination
+        Scanner sc = getScanner();
+        String inString, reverseString = "";
+
+        System.out.print("Write the word you wish to mirror: ");
+        inString = sc.nextLine();
+
+        for (int i = inString.length() - 1; i >= 0; i--) {
+            reverseString = reverseString + inString.charAt(i);
+        }
+        System.out.println(reverseString);
     }
 
-    // https://stackoverflow.com/questions/71872221/java-how-to-use-a-scanner-to-check-that-input-is-an-integer-and-is-within-a-spe
+    public void caseFour() {
+        Scanner sc = getScanner();
+        System.out.print("Please enter a string of numbers: ");
+
+        String inputString = sc.nextLine();
+        int sum = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char c = inputString.charAt(i);
+
+            if (!isDigit(c)) {
+                System.out.println("This string contains a letter, please input a string of only numbers.");
+                return; // atm only returning you to main menu, want it to loop ideally.
+            }
+            sum += c - 48; // can you write '0' because its 48 in the ASCII number?
+        }
+        System.out.println("The total sum of all the number in the string is: " + sum);
+    }
+
     public int checkIfNumber(Scanner sc) {
+        // https://stackoverflow.com/questions/71872221/java-how-to-use-a-scanner-to-check-that-input-is-an-integer-and-is-within-a-spe
         while (!sc.hasNextInt()) {
             System.out.println("Invalid input, please write a number");
             sc.nextLine();
@@ -116,13 +145,18 @@ public class Challange_2 {
         return sc.nextInt();
     }
 
-    public int inputAction() {
-        Scanner sc = getScanner();
-
-        int n = 0;
-        while (n < 1 || n > 5) {
-            n = checkIfNumber(sc);
-        }
-        return n;
+    public static boolean isDigit(char c) {
+        return c >= '0' && c <= '9';
     }
+    
+     /* public int inputAction() {
+     * Scanner sc = getScanner();
+     * 
+     * int n = 0;
+     * while (n < 1 || n > 5) {
+     * n = checkIfNumber(sc);
+     * }
+     * return n;
+     * }
+     */
 }
