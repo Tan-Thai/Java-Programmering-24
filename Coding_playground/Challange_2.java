@@ -21,11 +21,6 @@ public class Challange_2 {
 
             chosenOption = optionChecker(sc);
 
-            if (chosenOption == 'e') {
-                System.out.println("Exiting program, good bye.");
-                return;
-            }
-
             System.out.println("-----------\nYou chose option " + chosenOption);
             switch (chosenOption) {
                 case '1':
@@ -43,10 +38,18 @@ public class Challange_2 {
                 case '4':
                     caseFour();
                     break;
+
+                case 'e':
+                    System.out.println("Exiting program, good bye.");
+                    return;
             }
-            System.out.println("--------Returning to the main menu--------");
+            System.out.println("\n--------Returning to the main menu--------");
 
         } while (chosenOption != 'e');
+    }
+
+    public Scanner getScanner() {
+        return scanner;
     }
 
     public char optionChecker(Scanner sc) {
@@ -61,10 +64,6 @@ public class Challange_2 {
             }
             System.out.println("Invalid input, please enter a number between 1-4 or e to exit.");
         } while (true); // tvingar en loop tills användaren har skrivit rätt.
-    }
-
-    public Scanner getScanner() {
-        return scanner;
     }
 
     public void caseOne() {
