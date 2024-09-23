@@ -103,7 +103,7 @@ public class Challange_2 {
 
     public void caseThree() {
         // https://stackoverflow.com/questions/58942938/reversing-a-string-from-users-input
-        // good explaination
+        // good explanation
         Scanner sc = getScanner();
         String inString, reverseString = "";
 

@@ -31,7 +31,7 @@ public class E1 {
          * a. Yes
          * b. Yes
          * c. No, an int wants a number and not letters/characters.
-         * d. No, the variablename includes a special character (%).
+         * d. No, the variable name includes a special character (%).
          * e. No, a bool can only be set to 1/0 > True/False.
          * f. Yes
          * g. No, int cant contain decimals
@@ -137,9 +137,9 @@ public class E1 {
         // 1.10
         System.out.println("------------ Assignment 1.10 ------------");
         int a = 10, b = 20, c = 30;
-        System.out.println("" + a + b + c); // added "" to create a string, otherwise i wouldve had to print multiple
+        System.out.println("" + a + b + c); // added "" to create a string, otherwise i would've had to print multiple
                                             // times
-        System.out.println(MessageFormat.format("{0},{1},{2}", a, b, c)); // more proper formating
+        System.out.println(MessageFormat.format("{0},{1},{2}", a, b, c)); // more proper formatting
 
         int average = 0;
         average = (a + b + c) / 3;
