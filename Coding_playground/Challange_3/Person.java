@@ -45,7 +45,7 @@ public class Person {
                 this.name, this.age, this.gender, this.height));
 
         System.out.println((this.occupation.equals("N/A")) ? "They currently don't have any occupation"
-                : "They currently work as a(n) " + this.occupation + ".");
+                : "They currently have an occupation as a(n) " + this.occupation + ".");
 
         System.out.println(
                 (this.house == null) ? "They are currently homeless." : "They live in the house " + this.house + ".");
