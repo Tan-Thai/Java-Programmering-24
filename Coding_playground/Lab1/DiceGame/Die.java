@@ -24,17 +24,4 @@ public class Die {
         currentValue = random.nextInt(1, numberOfSides);
     }
 
-    public static void main(String[] args) {
-        Die die = new Die(5);
-
-        System.out.println(die.currentValue);
-        die.roll();
-        System.out.println(die.currentValue);
-        die.roll();
-        System.out.println(die.currentValue);
-        die.roll();
-        System.out.println(die.currentValue);
-
-
-    }
 }
